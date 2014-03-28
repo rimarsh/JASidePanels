@@ -460,7 +460,7 @@ static char ja_kvoContext;
         if (translate.x > 0.0f && ! self.allowLeftSwipe) {
             return NO;
         }
-        BOOL possible = translate.x != 0 && ((fabsf(translate.y) / fabsf(translate.x)) < 1.0f);
+        BOOL possible = !float_equal(translate.x, 0) && ((fabsf(translate.y) / fabsf(translate.x)) < 1.0f);
         if (possible && ((translate.x > 0 && self.leftPanel) || (translate.x < 0 && self.rightPanel))) {
             return YES;
         }
